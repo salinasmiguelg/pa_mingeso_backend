@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: pabackend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: pabackend
+  ports:
+    - name: http
+      protocol: TPC
+      nodePort: 30030
+      port: 8086
+      targetPort: 8086
